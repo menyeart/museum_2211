@@ -52,6 +52,21 @@ class Museum
     lottery_contestant_list 
   end
 
+  def draw_lottery_contestant(exhibit)
+    ticket_lottery_contestants(exhibit).sample.name
+  end
+
+  def announce_lottery_winner(exhibit)
+    winner = draw_lottery_contestant(exhibit)
+    if winner == nil
+      puts "No winners for this lottery"
+    else
+      puts "#{winner} has won the #{exhibit.name} exhibit lottery"
+    end
+  end
+ 
+
+
 
 
 
