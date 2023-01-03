@@ -28,5 +28,21 @@ class Museum
   end
 
 
+  def patrons_by_exhibit_interest
+    exhibit_interest_hash = Hash.new { |h, k| h[k] = [] }
+    @exhibits.each do |exhibit|
+      @patrons.each do |patron|
+        if recommend_exhibits(patron).include?(exhibit) == true
+          exhibit_interest_hash[exhibit] << patron
+        else
+          exhibit_interest_hash[exhibit] 
+        end
+      end
+    end
+    exhibit_interest_hash
+  end
+
+
+
 
 end
