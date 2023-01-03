@@ -14,6 +14,12 @@ RSpec.describe Museum do
     expect(dmns.name).to eq("Denver Museum of Nature and Science")
   end
 
+  it "does not have exhibits by default" do
+    dmns = Museum.new("Denver Museum of Nature and Science")
+    expect(dmns.exhibits).to eq([])
+  end
+
+
 
 
 
