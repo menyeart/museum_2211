@@ -55,7 +55,6 @@ RSpec.describe Museum do
     dmns.add_exhibit(gems_and_minerals)
     dmns.add_exhibit(dead_sea_scrolls)
     dmns.add_exhibit(imax)
-    dmns.patrons
     patron_1 = Patron.new("Bob", 0)
     patron_1.add_interest("Gems and Minerals")
     patron_1.add_interest("Dead Sea Scrolls")
@@ -67,7 +66,7 @@ RSpec.describe Museum do
     dmns.admit(patron_1)
     dmns.admit(patron_2)
     dmns.admit(patron_3)
-    expect(dmns.patrons).to eq([patron1, patron2, patron3])
+    expect(dmns.patrons).to eq([patron_1, patron_2, patron_3])
   end
 
 
